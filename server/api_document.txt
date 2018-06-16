@@ -36,12 +36,21 @@ POST /follower {follower detail}
 
 
 
-Camp
--
--
--
+Project
+- id
+- engname
+- thname
+- province
+- startProj
+- endProj
+- projManagerContact
+    - name
+    - phone
+    - email
 
-GET /camp/:id
-- get camp with specific id
+GET /projects/:id
+- get project with specific id
 
+GET /projects
+- get all projects (ignoring the admin of the projects for now)
 
