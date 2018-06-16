@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Teerapat12/Sansiri_Hackathon_Waifu#readme",
   "dependencies": {
+<<<<<<< HEAD
     "@material-ui/core": "^1.2.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
@@ -33,16 +34,30 @@
     "react-responsive": "^4.1.0",
     "semantic-ui-react": "^0.81.1",
     "styled-components": "^3.3.2",
+=======
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.1.0",
+>>>>>>> pan
     "autoprefixer": "7.1.5",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-wrap-in-js": "^1.1.0",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "glob": "^7.1.2",
+    "next": "^6.0.3",
     "node-sass": "^4.4.0",
+    "nodemon": "^1.17.5",
     "normalize.css": "^7.0.0",
+    "path-match": "^1.2.4",
     "postcss-easy-import": "^3.0.0",
     "postcss-loader": "^2.0.7",
     "raw-loader": "^0.5.1",
-    "sass-loader": "^6.0.6"
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-responsive": "^4.1.0",
+    "sass-loader": "^6.0.6",
+    "semantic-ui-react": "^0.81.1",
+    "styled-components": "^3.3.2"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.1.5",
