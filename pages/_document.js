@@ -13,7 +13,8 @@ export default class MyDocument extends Document {
 		return (
 			<html>
 			<Head>
-				<title>My page</title>
+				<title>Good Space by Sansiri</title>
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				{this.props.styleTags}
 				<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"></link>
 			</Head>
