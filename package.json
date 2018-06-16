@@ -4,9 +4,9 @@
   "description": "Good Space by Sansiri",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "nodemon server/index.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,12 @@
   },
   "homepage": "https://github.com/Teerapat12/Sansiri_Hackathon_Waifu#readme",
   "dependencies": {
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
     "next": "^6.0.3",
+    "path-match": "^1.2.4",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "url": "^0.11.0"
   }
 }
