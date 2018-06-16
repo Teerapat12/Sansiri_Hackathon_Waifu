@@ -71,7 +71,6 @@ export const CenterLogo = styled.div`
 	top: 0;
 	bottom: 0;
 	right: 0;
-	padding: 10px;
 	justify-content: center;
 	align-items: center;
 	animation-name: fadeIn;

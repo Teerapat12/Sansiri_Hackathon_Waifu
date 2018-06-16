@@ -1,217 +1,177 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
-import Input from '@material-ui/core/Input'
-import Select from 'react-select';
-import Chip from '@material-ui/core/Chip'
-import Typography from '@material-ui/core/Typography'
-import ClearIcon from '@material-ui/icons/Clear'
-import MenuItem from '@material-ui/core/MenuItem'
-import { withStyles } from '@material-ui/core/styles'
+import Autosuggest from 'react-autosuggest';
+import match from 'autosuggest-highlight/match';
+import parse from 'autosuggest-highlight/parse';
+import TextField from '@material-ui/core/TextField';
+import Paper from '@material-ui/core/Paper';
+import MenuItem from '@material-ui/core/MenuItem';
+import { withStyles } from '@material-ui/core/styles';
 
-class Option extends React.Component {
-	handleClick = event => {
-		this.props.onSelect(this.props.option, event);
-	};
-
-	render() {
-		const { children, isFocused, isSelected, onFocus } = this.props;
-
-		return (
-			<MenuItem
-				onFocus={onFocus}
-				selected={isFocused}
-				onClick={this.handleClick}
-				component="div"
-				style={{
-					fontWeight: isSelected ? 500 : 400,
-				}}
-			>
-				{children}
-			</MenuItem>
-		);
-	}
-}
-
-
-const SelectWrapped = (props) => {
-	const { classes, ...other } = props;
+function renderInput (inputProps) {
+	const { classes, ref, ...other } = inputProps;
 
 	return (
-		<Select
-			optionComponent={Option}
-			noResultsText={<Typography>{'No results found'}</Typography>}
-			arrowRenderer={arrowProps => {
-				return arrowProps.isOpen ? <ArrowDropUpIcon /> : <ArrowDropDownIcon />;
+		<TextField
+			fullWidth
+			InputProps={{
+				inputRef: ref,
+				classes: {
+					input: classes.input
+				},
+				...other
 			}}
-			clearRenderer={() => <ClearIcon />}
-			valueComponent={valueProps => {
-				const { value, children, onRemove } = valueProps;
-
-				const onDelete = event => {
-					event.preventDefault();
-					event.stopPropagation();
-					onRemove(value);
-				};
-
-				if (onRemove) {
-					return (
-						<Chip
-							tabIndex={-1}
-							label={children}
-							className={classes.chip}
-							deleteIcon={<CancelIcon onTouchEnd={onDelete} />}
-							onDelete={onDelete}
-						/>
-					);
-				}
-
-				return <div className="Select-value">{children}</div>;
-			}}
-			{...other}
 		/>
 	);
 }
 
-const ITEM_HEIGHT = 48;
+function renderSuggestion (suggestion, { query, isHighlighted }) {
+	const matches = match(suggestion.label, query);
+	const parts = parse(suggestion.label, matches);
+
+	return (
+		<MenuItem selected={isHighlighted} component="div">
+			<div>
+				{parts.map((part, index) => {
+					return part.highlight ? (
+						<span key={String(index)} style={{ fontWeight: 300 }}>
+              {part.text}
+            </span>
+					) : (
+						<strong key={String(index)} style={{ fontWeight: 500 }}>
+							{part.text}
+						</strong>
+					);
+				})}
+			</div>
+		</MenuItem>
+	);
+}
+
+function renderSuggestionsContainer (options) {
+	const { containerProps, children } = options;
+
+	return (
+		<Paper {...containerProps} square>
+			{children}
+		</Paper>
+	);
+}
+
 const styles = theme => ({
-	root: {
+	container: {
 		flexGrow: 1,
-		height: 250,
+		position: 'relative',
+		height: 250
 	},
-	chip: {
-		margin: theme.spacing.unit / 4,
+	suggestionsContainerOpen: {
+		position: 'absolute',
+		zIndex: 1,
+		marginTop: theme.spacing.unit,
+		left: 0,
+		right: 0
 	},
-	'@global': {
-		'.Select-control': {
-			display: 'flex',
-			alignItems: 'center',
-			border: 0,
-			height: 'auto',
-			background: 'transparent',
-			'&:hover': {
-				boxShadow: 'none',
-			},
-		},
-		'.Select-multi-value-wrapper': {
-			flexGrow: 1,
-			display: 'flex',
-			flexWrap: 'wrap',
-		},
-		'.Select--multi .Select-input': {
-			margin: 0,
-		},
-		'.Select.has-value.is-clearable.Select--single > .Select-control .Select-value': {
-			padding: 0,
-		},
-		'.Select-noresults': {
-			padding: theme.spacing.unit * 2,
-		},
-		'.Select-input': {
-			display: 'inline-flex !important',
-			padding: 0,
-			height: 'auto',
-		},
-		'.Select-input input': {
-			background: 'transparent',
-			border: 0,
-			padding: 0,
-			cursor: 'default',
-			display: 'inline-block',
-			fontFamily: 'inherit',
-			fontSize: 'inherit',
-			margin: 0,
-			outline: 0,
-		},
-		'.Select-placeholder, .Select--single .Select-value': {
-			position: 'absolute',
-			top: 0,
-			left: 0,
-			right: 0,
-			bottom: 0,
-			display: 'flex',
-			alignItems: 'center',
-			fontFamily: theme.typography.fontFamily,
-			fontSize: theme.typography.pxToRem(16),
-			padding: 0,
-		},
-		'.Select-placeholder': {
-			opacity: 0.42,
-			color: theme.palette.common.black,
-		},
-		'.Select-menu-outer': {
-			backgroundColor: theme.palette.background.paper,
-			boxShadow: theme.shadows[2],
-			position: 'absolute',
-			left: 0,
-			top: `calc(100% + ${theme.spacing.unit}px)`,
-			width: '100%',
-			zIndex: 2,
-			maxHeight: ITEM_HEIGHT * 4.5,
-		},
-		'.Select.is-focused:not(.is-open) > .Select-control': {
-			boxShadow: 'none',
-		},
-		'.Select-menu': {
-			maxHeight: ITEM_HEIGHT * 4.5,
-			overflowY: 'auto',
-		},
-		'.Select-menu div': {
-			boxSizing: 'content-box',
-		},
-		'.Select-arrow-zone, .Select-clear-zone': {
-			color: theme.palette.action.active,
-			cursor: 'pointer',
-			height: 21,
-			width: 21,
-			zIndex: 1,
-		},
-		// Only for screen readers. We can't use display none.
-		'.Select-aria-only': {
-			position: 'absolute',
-			overflow: 'hidden',
-			clip: 'rect(0 0 0 0)',
-			height: 1,
-			width: 1,
-			margin: -1,
-		},
+	suggestion: {
+		display: 'block'
 	},
+	suggestionsList: {
+		margin: 0,
+		padding: 0,
+		listStyleType: 'none'
+	}
 });
 
-
 class SearchBox extends React.Component {
-
 	state = {
-		search: []
-	}
-
-	handleChange = setFound => value => {
-		this.setState({
-			search: value
-		}, () => setFound(value))
+		value: '',
+		suggestions: []
 	};
 
-	render() {
-		const { classes, setFound, data } = this.props
-		return(
-			<Input
-				fullWidth
-				inputComponent={SelectWrapped}
-				value={this.state.value}
-				onChange={this.handleChange(setFound)}
-				placeholder="Select multiple countries"
-				name="react-select-chip"
+	getSuggestionValue (suggestion) {
+		return suggestion.label;
+	}
+
+	getSuggestions (value) {
+		let {datas} = this.props
+		datas = datas.reduce((obj, cur) => {
+			obj.push({label: cur.name})
+			return obj
+		}, [])
+		const inputValue = value.trim().toLowerCase();
+		const inputLength = inputValue.length;
+		let count = 0;
+
+		return inputLength === 0
+			? []
+			: datas.filter(suggestion => {
+				const keep =
+					count < 5 && suggestion.label.toLowerCase().slice(0, inputLength) === inputValue;
+
+				if (keep) {
+					count += 1;
+				}
+
+				return keep;
+			});
+	}
+
+	handleSuggestionsFetchRequested = onFound => ({ value }) => {
+		this.setState({
+			suggestions: this.getSuggestions(value)
+		}, onFound(this.getSuggestions(value))); // call onFound callback
+	};
+
+	handleChange = (event, { newValue }) => {
+		this.setState({
+			value: newValue,
+			suggestions: this.getSuggestions(newValue)
+		});
+	};
+
+	componentDidMount() {
+		this.setState({suggestions: this.props.datas.reduce((obj, cur) => {
+				obj.push({label: cur.name})
+				return obj
+			}, [])})
+	}
+	handleSuggestionsClearRequested = (onNotFound) => () => {
+		this.setState({
+			suggestions: []
+		}, () => onNotFound([]))
+	}
+
+
+	render () {
+		const { classes, onFound, onNotFound } = this.props;
+
+		return (
+			<Autosuggest
+				theme={{
+					container: classes.container,
+					suggestionsContainerOpen: classes.suggestionsContainerOpen,
+					suggestionsList: classes.suggestionsList,
+					suggestion: classes.suggestion
+				}}
+				renderInputComponent={renderInput}
+				suggestions={this.state.suggestions}
+				onSuggestionsFetchRequested={this.handleSuggestionsFetchRequested(onFound)}
+				onSuggestionsClearRequested={this.handleSuggestionsClearRequested(onNotFound)}
+				renderSuggestionsContainer={renderSuggestionsContainer}
+				getSuggestionValue={this.getSuggestions}
+				renderSuggestion={renderSuggestion}
 				inputProps={{
 					classes,
-					multi: true,
-					instanceId: 'react-select-chip',
-					id: 'react-select-chip',
-					simpleValue: true,
-					options: data,
+					placeholder: 'Search a country (start with a)',
+					value: this.state.value,
+					onChange: this.handleChange
 				}}
 			/>
-		)
+		);
 	}
 }
 
+SearchBox.propTypes = {
+	classes: PropTypes.object.isRequired
+};
 
 export default withStyles(styles)(SearchBox);

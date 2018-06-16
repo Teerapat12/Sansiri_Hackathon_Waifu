@@ -1,5 +1,7 @@
 import SearchBox from '../components/SearchBox'
 import React from 'react'
+import axios from 'axios'
+
 const suggestion = [
 	{ label: 'Afghanistan' },
 	{ label: 'Aland Islands' },
@@ -34,16 +36,30 @@ const suggestion = [
 	{ label: 'Bouvet Island' },
 	{ label: 'Brazil' },
 	{ label: 'British Indian Ocean Territory' },
-	{ label: 'Brunei Darussalam' },
+	{ label: 'Brunei Darussalam' }
 ].map(suggestion => ({
 	value: suggestion.label,
-	label: suggestion.label,
+	label: suggestion.label
 }));
 
 class Test extends React.Component {
-	render() {
+	state = {
+		founds: [],
+		datas: []
+	}
+
+	componentDidMount() {
+		axios.get('http://localhost:3000/api/followers').then(result => this.setState({datas: result}))
+	}
+	render () {
 		return (
-			<SearchBox data={suggestion} setFound={(value) => console.log(value)}/>
+			<>
+				<p style={{backgroundColor: 'red'}}>{this.state.founds.map(found => found.label).join(', ')}</p>
+				<SearchBox datas={this.state.datas}
+						   onFound={(value) => this.setState({ founds: value })}
+						   onNotFound={(value) => this.setState({ founds: value})}
+				/>
+			</>
 		)
 	}
 }
