@@ -1,8 +1,8 @@
 [
   {
     "title":"ดร.",
-    "firstname": "Allen",
-    "lastname" : "Walker",
+    "fname": "Allen",
+    "lname" : "Walker",
     "dob": "12/12/2005",
     "number":"0829851212",
     "age":"13",
@@ -11,8 +11,8 @@
   },
   {
     "title":"ดร.",
-    "firstname": "Allen",
-    "lastname" : "Walker",
+    "fname": "Allen",
+    "lname" : "Walker",
     "dob": "12/12/2005",
     "number":"0829851212",
     "age":"13",
