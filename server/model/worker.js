@@ -6,7 +6,9 @@ var workerSchema = mongoose.Schema({
   lastname : String,
   number: String,
   nationality: String,
-  workerType: String
+  workerType: String,
+  camp: [{type: mongoose.Schema.Types.ObjectId, ref: 'Camp'}],
+  currentCamp: {type: mongoose.Schema.Types.ObjectId, ref: 'Camp'}
 });
 
 module.exports = mongoose.model('Worker', workerSchema);
