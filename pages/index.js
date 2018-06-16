@@ -28,6 +28,7 @@ class Index extends React.Component {
 		}
 		return (
 			<Layout>
+				<style dangerouslySetInnerHTML={{_html: }} />
 				<Paper style={paperStyle}>
 					<FlexBox style={{width: '100%', height: '100vh', justifyContent: "space-evenly"}}>
 						<FlexBox>
