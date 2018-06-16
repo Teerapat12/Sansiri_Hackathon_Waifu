@@ -1,0 +1,47 @@
+Worker
+-
+-
+-
+-
+
+End point
+GET /worker/:id
+- get worker with specific id
+
+GET /workers/:camps
+- get all workers in the specific camp id
+
+POST /worker {worker detail}
+- add worker into the database.
+- Detail includes worker name, camp id, etc.
+
+PUT /worker {worker detail}
+- edit worker detail based on the new worker detail
+
+
+Follower
+-
+-
+-
+
+GET /follower/:id
+- get follower with specific id
+
+GET /followers/:workerId
+- get followers that follow the worker (with worker Id)
+
+POST /follower {follower detail}
+- add follower and add it to the worker.
+- need worker id.
+
+
+
+Camp
+-
+-
+-
+
+GET /camp/:id
+- get camp with specific id
+
+

@@ -1,0 +1,30 @@
+// Worker
+[
+  {
+    "firstname": "ธีรภัทร",
+    "lastname" : "ชัยวชิระศักดิ์",
+    "id": "123456",
+    "number":"0829851212",
+    "nationality": "Thai",
+    "followers":["fol124123"], // Object Id
+    "workerType":"ช่างปูน"
+  },
+  {
+    "firstname": "เกรียงไกร",
+    "lastname" : "แกร่งกล้า",
+    "id": "123457",
+    "number":"0829851212",
+    "nationality": "Thai",
+    "followers":["fol124125"," fol14123"], // Object Id
+    "workerType":"ช่างไม้"
+  },
+  {
+    "firstname": "ไข่ต้ม",
+    "lastname" : "สามารถ",
+    "id": "123458",
+    "number":"0829851212",
+    "nationality": "Thai",
+    "followers":[], // Object Id
+    "workerType":"ช่างแอร์"
+  }
+]
