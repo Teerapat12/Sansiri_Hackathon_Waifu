@@ -16,6 +16,7 @@ mongoose.connect('mongodb+srv://sansiri_waifu:waifu@cluster0-3odgt.gcp.mongodb.n
 var Project = require('./model/project');
 var Follower = require('./model/follower');
 var Worker = require('./model/worker');
+var Camp = require('./model/camp');
 
 
 const apiRoutes = require('./routes/index.js');

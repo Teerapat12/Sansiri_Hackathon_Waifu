@@ -9,6 +9,8 @@ router.get('/search', (req, res) => {
 
 router.use('/projects', require('./projectRoutes'));
 
+router.use('/camps', require('./campRoutes'));
+
 router.use('/workers', require('./workerRoutes'));
 router.use('/followers', require('./followerRoutes'));
 
