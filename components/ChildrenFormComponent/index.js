@@ -14,7 +14,6 @@ class ChildrenFormCompnent extends React.Component {
 						<Input />
 					</Grid>
 				</Grid>
-
 			</div>
 		)
 	}
