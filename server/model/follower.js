@@ -14,3 +14,16 @@ var followerSchema = mongoose.Schema({
 });
 
 module.exports = mongoose.model('Follower', followerSchema);
+
+// Sample Data
+// {
+//   "title":"ดร.",
+//   "fname": "Allen",
+//   "lname" : "Walker",
+//   "dob": "12/12/2005",
+//   "number":"0829851212",
+//   "age":"13",
+//   "nationality": "Thai",
+//   "gender":"ชาย",
+//   "followingWorker": "idhere"
+// }

@@ -7,7 +7,7 @@ var Project = mongoose.model('Project');
 
 
 router.get('/',(req, res) => {
-  Project.fake({limit:20},function(err, projects){
+  Project.fake({},function(err, projects){
     if(err) {return res.status(500).send("Error")}
     return res.status(200).json(projects)
   })
@@ -19,6 +19,14 @@ router.get('/:id', (req, res) => {
     return res.status(200).json(project)
   })
 });
+
+router.post('/', (req,res) => {
+  const {project} = req.body;
+  Project.create(project, (err,project) => {
+    if(err) return res.status(500).send(err)
+    return res.status(200).send(project)
+  })
+})
 
 
 module.exports = router;
