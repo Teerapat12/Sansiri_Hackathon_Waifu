@@ -5,8 +5,8 @@ export const Menu = styled.div`
 	width: 100%;
 	margin: auto;
 	position: relative;
-	background: linear-gradient(to right, #d1d1d1 0%,#e0e0e0 51%,#d1d1d1 100%);
-	border-bottom: 3px solid #1a1a1a;
+	background: linear-gradient(to right, #d4f2cd 0%,#f2b9ae 100%);
+	box-shadow: 0 -10px 45px 5px rgba(0,0,0, .4);
 	box-sizing: border-box;
 	z-index: 50;
 	
@@ -71,6 +71,7 @@ export const CenterLogo = styled.div`
 	top: 0;
 	bottom: 0;
 	right: 0;
+	padding: 10px;
 	justify-content: center;
 	align-items: center;
 `	

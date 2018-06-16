@@ -23,7 +23,7 @@ class Navbar extends React.Component {
 	constructor () {
 		super();
 		this.state = {
-			activeMenu: '',
+			activeMenu: ''
 		};
 	}
 
@@ -44,17 +44,15 @@ class Navbar extends React.Component {
 		return (
 			<>
 				<Menu>
-					<Container>
-						<MenuContainer>
-							<MenuGroup>
-								<MenuItem >
-									<CenterLogo>
-										<Brand src="/static/images/Sansiri_Logo.png" />
-									</CenterLogo>
-								</MenuItem>
-							</MenuGroup>
-						</MenuContainer>
-					</Container>
+					<MenuContainer>
+						<MenuGroup>
+							<MenuItem>
+								<CenterLogo>
+									<Brand src="/static/images/Sansiri_Logo.png" />
+								</CenterLogo>
+							</MenuItem>
+						</MenuGroup>
+					</MenuContainer>
 				</Menu>
 			</>
 		)
