@@ -15,7 +15,7 @@ router.get('/',(req, res) => {
 
 router.get('/:id', (req, res) => {
   const {id} = req.params;
-  Follower.findOne({id}, (err,follower) => {
+  Follower.findOne({_id:id}, (err,follower) => {
     if(err) return res.status(500).send(err)
     return res.send(follower)
   })

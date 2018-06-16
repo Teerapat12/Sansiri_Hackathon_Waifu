@@ -7,14 +7,15 @@ var Project = mongoose.model('Project');
 
 
 router.get('/',(req, res) => {
-  Project.fake({},function(err, projects){
+  Project.find({},function(err, projects){
     if(err) {return res.status(500).send("Error")}
     return res.status(200).json(projects)
   })
 });
 
 router.get('/:id', (req, res) => {
-  Project.fakeOne({},function(err, project){
+  const {id} = req.params;
+  Project.findOne({_id:id},function(err, project){
     if(err) {return res.status(500).send("Error")}
     return res.status(200).json(project)
   })
