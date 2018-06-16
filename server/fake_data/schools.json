@@ -1,0 +1,64 @@
+[{
+   "level":"ม-ต้น",
+   "name":"สวนกุหลาบวิทยาลัยรังสิต",
+   "isNormal":true,
+   "inCountry": true,
+   "inGoodSpace": false
+ },
+{
+  "level":"ม-ต้น",
+  "name":" โรงเรียนกุดข้าวปุ้นวิทยา",
+  "isNormal":true,
+  "inCountry": false,
+  "inGoodSpace": true
+},{
+  "level":"ป-ต้น",
+  "name":"โรงเรียนเก่าขามวิทยา",
+  "isNormal":true,
+  "inCountry": true,
+  "inGoodSpace": true
+},{
+  "level":"ม-ต้น",
+  "name":"โรงเรียนแก่งกระจานวิทยา",
+  "isNormal":false,
+  "inCountry": true,
+  "inGoodSpace": false
+},{
+  "level":"ม-ต้น",
+  "name":"โรงเรียนกาบเชิงวิทยา",
+  "isNormal":false,
+  "inCountry": true,
+  "inGoodSpace": false
+},{
+  "level":"ป-ปลาย",
+  "year":"2017",
+  "name":"- โรงเรียนกันทรอมวิทยาคม",
+  "isNormal":true,
+  "inCountry": false,
+  "inGoodSpace": false
+},{
+  "level":"อ-ปลาย",
+  "name":"โรงเรียนกระเทียมวิทยา",
+  "isNormal":true,
+  "inCountry": false,
+  "inGoodSpace": false
+},{
+  "level":"อ-ต้น",
+  "name":"- โรงเรียนแก่นนครวิทยาลัย ๒",
+  "isNormal":false,
+  "inCountry": true,
+  "inGoodSpace": false
+},{
+  "level":"อ-ต้น",
+  "name":"โรงเรียนกกตูมประชาสรรค์",
+  "isNormal":true,
+  "inCountry": true,
+  "inGoodSpace": false
+},{
+  "level":"อ-ต้น",
+  "name":"โรงเรียนเกาะโพธิ์ถ้วยงามวิทยา",
+  "isNormal":true,
+  "inCountry": true,
+  "inGoodSpace": false
+},
+]

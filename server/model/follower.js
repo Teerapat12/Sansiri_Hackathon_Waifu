@@ -38,7 +38,15 @@ var followerSchema = mongoose.Schema({
     type:Boolean,
     fake:'random.boolean'
   },
-  followingWorker: {type: mongoose.Schema.Types.ObjectId, ref: 'Worker'}
+  followingWorker: {type: mongoose.Schema.Types.ObjectId, ref: 'Worker'},
+  school:{
+    level:String,
+    year:String,
+    name:String,
+    inCountry: Boolean,
+    isNormal: Boolean,
+    inGoodSpace: Boolean
+  }
 });
 
 followerSchema.plugin(fakegoose);
@@ -56,3 +64,4 @@ module.exports = mongoose.model('Follower', followerSchema);
 //   "gender":"ชาย",
 //   "followingWorker": "idhere"
 // }
+
