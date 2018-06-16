@@ -6,7 +6,7 @@ const next = require('next');
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
-const apiRoutes = require('./routes.js');
+const apiRoutes = require('./routes/index.js');
 
 app.prepare().then(() => {
   const server = express();
