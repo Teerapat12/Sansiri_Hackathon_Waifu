@@ -1,4 +1,3 @@
-// Worker
 [
   {
     "firstname": "ธีรภัทร",
@@ -6,7 +5,7 @@
     "id": "123456",
     "number":"0829851212",
     "nationality": "Thai",
-    "followers":["fol124123"], // Object Id
+    "followers":["fol124123"],
     "workerType":"ช่างปูน"
   },
   {
@@ -15,7 +14,7 @@
     "id": "123457",
     "number":"0829851212",
     "nationality": "Thai",
-    "followers":["fol124125"," fol14123"], // Object Id
+    "followers":["fol124125"," fol14123"],
     "workerType":"ช่างไม้"
   },
   {
@@ -24,7 +23,7 @@
     "id": "123458",
     "number":"0829851212",
     "nationality": "Thai",
-    "followers":[], // Object Id
+    "followers":[],
     "workerType":"ช่างแอร์"
   }
 ]

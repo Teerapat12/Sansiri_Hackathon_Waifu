@@ -1,10 +1,19 @@
-// Follower
 [
   {
     "title":"ดร.",
     "firstname": "Allen",
     "lastname" : "Walker",
-    "dob": "12/12/2005",  // Date Object
+    "dob": "12/12/2005",
+    "number":"0829851212",
+    "age":"13",
+    "nationality": "Thai",
+    "gender":"ชาย"
+  },
+  {
+    "title":"ดร.",
+    "firstname": "Allen",
+    "lastname" : "Walker",
+    "dob": "12/12/2005",
     "number":"0829851212",
     "age":"13",
     "nationality": "Thai",
