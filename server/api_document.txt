@@ -18,6 +18,9 @@ POST /worker {worker detail}
 PUT /worker {worker detail}
 - edit worker detail based on the new worker detail
 
+PUT /movecamp/:workerId {camp id}
+- Move user to the new camp
+
 
 Follower
 -
