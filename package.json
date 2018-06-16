@@ -4,7 +4,7 @@
   "description": "Good Space by Sansiri",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server/index.js",
+    "dev": "nodemon --watch server server/index.js",
     "build": "next build",
     "start": "NODE_ENV=production node server/index.js"
   },
