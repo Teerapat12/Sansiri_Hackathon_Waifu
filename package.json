@@ -1,0 +1,27 @@
+{
+  "name": "Sansiri_Hackathon_Waifu",
+  "version": "1.0.0",
+  "description": "Good Space by Sansiri",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Teerapat12/Sansiri_Hackathon_Waifu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Teerapat12/Sansiri_Hackathon_Waifu/issues"
+  },
+  "homepage": "https://github.com/Teerapat12/Sansiri_Hackathon_Waifu#readme",
+  "dependencies": {
+    "next": "^6.0.3",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}
