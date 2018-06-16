@@ -33,7 +33,7 @@ const data = {
 const options = {
   scales: {
     yAxes: [{
-      display:false
+      // display:false
     }]
   },
 }

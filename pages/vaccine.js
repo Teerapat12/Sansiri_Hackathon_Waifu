@@ -1,4 +1,5 @@
 import React from 'react'
+import Layout from '../components/Layout'
 import Router from 'next/router'
 
 
@@ -8,10 +9,12 @@ import VaccineTimeLine from '../components/Stats/vaccineTimeline';
 class Vaccine extends React.Component{
   render() {
     return(
-			<div>
-        <VaccineSummary />
-        <VaccineTimeLine />
-			</div>
+			<Layout>
+        <div style={{padding:'15px'}}>
+          <VaccineSummary />
+          <VaccineTimeLine />
+        </div>
+			</Layout>
     )
   }
 }

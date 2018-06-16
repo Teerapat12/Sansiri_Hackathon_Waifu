@@ -58,7 +58,7 @@ const options = {
     }],
     yAxes: [{
       stacked: true,
-      display:false
+      // display:false
     }]
   },
 }
