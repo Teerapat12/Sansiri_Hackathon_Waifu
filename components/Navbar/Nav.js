@@ -74,4 +74,15 @@ export const CenterLogo = styled.div`
 	padding: 10px;
 	justify-content: center;
 	align-items: center;
-`	
+	animation-name: fadeIn;
+	animation-duration: .6s;
+	
+	@keyframes fadeIn {
+		from{
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+`
