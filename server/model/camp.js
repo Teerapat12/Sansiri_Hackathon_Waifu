@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 var campSchema = mongoose.Schema({
   address: String,
-  name: String,
+  province: String,
   project: {type: mongoose.Schema.Types.ObjectId, ref: 'Project'}
 });
 
