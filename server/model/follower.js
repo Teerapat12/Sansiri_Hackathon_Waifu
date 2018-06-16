@@ -33,6 +33,10 @@ var followerSchema = mongoose.Schema({
   gender: {
     type:String,
   },
+  learnInThai: {
+    type:Boolean,
+    fake:'random.boolean'
+  },
   followingWorker: {type: mongoose.Schema.Types.ObjectId, ref: 'Worker'}
 });
 
