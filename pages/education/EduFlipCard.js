@@ -13,14 +13,13 @@ class EduFlipCard extends React.Component{
 
 
   render() {
-
+    const {front,back} = this.props;
     return(
 
       <div style={{height:"475px"}}>
         <FlipCard
           flipped={ this.state.flipped }
-          frontChild={ cardDiv("เด็กที่เรียนพื้นที่ทั่วไป","152","https://kbob.github.io/images/sample-5.jpg", ()=>{this.setState({flipped:!this.state.flipped})}) }
-
+          frontChild={ cardDiv(front.name,front.studentNum,"https://kbob.github.io/images/sample-5.jpg", ()=>{this.setState({flipped:!this.state.flipped})}) }
           backChild={  cardDiv("เด็กที่เรียนพื้นที่พิเศษ","37","https://kbob.github.io/images/sample-5.jpg", ()=>{this.setState({flipped:!this.state.flipped})})}
           width={ "100%" } height={ 100 }
         />
@@ -34,7 +33,7 @@ const cardDiv = (name,studentNum,img, onFlip) => <div>
   <div style={cardStyle}>
     <p style={cardTitleStyle}>{name}</p>
     <div style={{position:"relative"}}>
-      <img src={img} style={imageStyle} height={150} width={250}/>
+      <div style={{...imageStyle,display:"flex", alignItems:"center",justifyContent:"center", backgroundImage:"url('https://www.gettyimages.ie/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg')"}}><p style={middleNumberStyle}>{studentNum} คน</p></div>
       <button style={rotateBtnStyle} onClick={()=>onFlip()}>O</button>
     </div>
   </div>
@@ -59,7 +58,16 @@ const rotateBtnStyle = {
   marginRight: "auto",
 
   position:"relative",
-  left:"125px"
+  left:"112px"
+
+}
+
+const middleNumberStyle = {
+  display:"flex",
+  height:"40px",
+  backgroundColor:"black",
+  color:"white",
+  fontSize:"2em"
 
 }
 
@@ -74,6 +82,8 @@ const imageStyle = {
   marginTop:"50px",
   marginLeft: "auto",
   marginRight: "auto",
+  height:"150px",
+  width:"225px",
 }
 
 export default EduFlipCard

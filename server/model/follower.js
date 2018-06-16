@@ -32,6 +32,7 @@ var followerSchema = mongoose.Schema({
   },
   gender: {
     type:String,
+    default:'male'
   },
   learnInThai: {
     type:Boolean,
