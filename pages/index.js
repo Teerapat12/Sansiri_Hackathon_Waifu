@@ -1,10 +1,10 @@
 import React from 'react'
-import ProjectBox from '../components/ProjectBox'
+import Segment from '../components/Segment'
 
 class Index extends React.Component{
 	render() {
 		return(
-			<ProjectBox/>
+			<Segment/>
 		)
 	}
 }

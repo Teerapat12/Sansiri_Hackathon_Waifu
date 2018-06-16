@@ -15,6 +15,7 @@ export default class MyDocument extends Document {
 			<Head>
 				<title>My page</title>
 				{this.props.styleTags}
+				<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css"></link>
 			</Head>
 			<body>
 			<Main />
