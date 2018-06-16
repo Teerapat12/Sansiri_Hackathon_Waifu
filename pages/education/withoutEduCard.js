@@ -18,7 +18,8 @@ const cardStyle = {
   borderWidth: '1px',
   borderStyle:' solid',
   shadowBlur:10,
-  height:"400px"
+  height:"400px",
+  backgroundColor:"white"
 };
 
 

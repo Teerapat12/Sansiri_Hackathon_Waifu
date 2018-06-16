@@ -5,7 +5,8 @@ import { FlipCard } from 'react-flop-card';
 
 import WithEduCard from './withEduCard'
 import WithoutEduCard from './withoutEduCard'
-
+import EduFlipCard from './EduFlipCard'
+import Carousel from 'nuka-carousel';
 
 class Education extends React.Component{
 
@@ -21,17 +22,12 @@ class Education extends React.Component{
     return(
 			<Layout>
         <div style={{padding:'15px'}}>
-          <button onClick={e => this.setState({ flipped: !this.state.flipped })}>
-            Flip
-          </button>
-
-          <FlipCard
-            flipped={ this.state.flipped }
-            frontChild={ <WithEduCard /> }
-
-            backChild={ <WithoutEduCard/>}
-            width={ "100%" } height={ 100 }
-           />
+          <h2 style={{marginLeft:'40px'}}>ประวัติการศึกษา</h2>
+          <Carousel>
+            <EduFlipCard />
+            <EduFlipCard />
+            <EduFlipCard />
+          </Carousel>
 
         </div>
 			</Layout>

@@ -1,26 +1,18 @@
 import React from 'react'
-import Slider from "react-slick";
-import Slider from "slick/slick-theme.css";
+import Carousel from 'nuka-carousel';
 
 class WithEduCard extends React.Component{
 
   render() {
-    var settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
+
     return(
-      <Slider {...settings}>
-        <div style={cardStyle}>
-          Front
-        </div>
-        <div style={cardStyle}>
-          Front2
-        </div>
-      </Slider>
+
+      <div style={cardStyle}>
+        <Carousel>
+          <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide1" />
+          <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide2" />
+        </Carousel>
+      </div>
     )
   }
 }

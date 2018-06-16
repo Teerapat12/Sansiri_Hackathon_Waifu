@@ -6,7 +6,7 @@ var Follower = mongoose.model('Follower');
 
 
 router.get('/',(req, res) => {
-  Follower.find({}, (err,followers) => {
+  Follower.fake({}, (err,followers) => {
     if(err) return res.status(500).send(err)
     return res.send(followers)
   })
