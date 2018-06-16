@@ -16,19 +16,19 @@ class Index extends React.Component {
 	}
 
 	render () {
-		const paperStyle = {
-			position: 'absolute',
-			top: 0,
-			right: 0,
-			bottom: 0,
-			left: 0,
-			backgroundImage: 'url("/static/images/homeBG.jpg")',
-			backgroundSize: 'cover',
-			backgroundPosition: 'center bottom'
-		}
 		return (
 			<Layout>
-				<Paper style={paperStyle}>
+				<div style={{
+					position: 'absolute',
+					top: 0,
+					left: 0,
+					right: 0,
+					bottom: 0,
+					backgroundImage: 'url("/static/images/homeBG.jpg")',
+					backgroundRepeat: 'no-repeat',
+					backgroundPosition: 'center bottom',
+					backgroundSize: 'contain'
+				}}>
 					<FlexBox style={{width: '100%', height: '100vh', justifyContent: "space-evenly"}}>
 						<FlexBox>
 							<CircleButton onClick={() => Router.push('/dashboard')}>
@@ -43,7 +43,7 @@ class Index extends React.Component {
 							</CircleButton>
 						</FlexBox>
 					</FlexBox>
-				</Paper>
+				</div>
 			</Layout>
 		)
 	}
