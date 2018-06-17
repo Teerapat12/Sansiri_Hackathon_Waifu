@@ -94,7 +94,7 @@ class SearchBox extends React.Component {
 	getSuggestions (value) {
 		let {datas} = this.props
 		datas = datas.reduce((obj, cur) => {
-			obj.push({label: cur.name})
+			obj.push({label: cur.fname, ...cur})
 			return obj
 		}, [])
 		const inputValue = value.trim().toLowerCase();

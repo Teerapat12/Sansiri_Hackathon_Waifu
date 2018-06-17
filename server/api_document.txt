@@ -18,6 +18,9 @@ POST /worker {worker detail}
 PUT /worker {worker detail}
 - edit worker detail based on the new worker detail
 
+PUT /movecamp/:workerId {camp id}
+- Move user to the new camp
+
 
 Follower
 -
@@ -36,12 +39,29 @@ POST /follower {follower detail}
 
 
 
-Camp
--
--
--
+Project
+- id
+- engname
+- thname
+- province
+- startProj
+- endProj
+- projManagerContact
+    - name
+    - phone
+    - email
 
-GET /camp/:id
-- get camp with specific id
+GET /projects/:id
+- get project with specific id
+
+GET /projects
+- get all projects (ignoring the admin of the projects for now)
 
 
+[{
+"name":"กุ้งแก้ววิทยาคาร",
+"level":"",
+},{
+  "name":"กุ้งแก้ววิทยาคาร",
+  "level":"",
+  }]
