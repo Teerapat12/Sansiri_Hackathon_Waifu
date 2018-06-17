@@ -9,6 +9,9 @@ import VaccineTimeLine from '../components/Stats/vaccineTimeline';
 import WorkerNationality from '../components/Stats/workerNationality';
 import FollowerPerYear from '../components/Stats/followerPerYear';
 
+
+import EducationTimeline from '../components/Stats/educationTimeline';
+
 class Vaccine extends React.Component{
   render() {
     return(
@@ -28,6 +31,11 @@ class Vaccine extends React.Component{
             ข้อมูลการฉีดวัคซีน
             <VaccineSummary />
             <VaccineTimeLine />
+          </div>
+
+          <div>
+            การศึกษา
+            <EducationTimeline />
           </div>
         </div>
       </Layout>

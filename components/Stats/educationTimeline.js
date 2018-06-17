@@ -1,12 +1,12 @@
 import React from 'react'
-import {Doughnut, Line, Bar} from 'react-chartjs-2';
+import {Bar} from 'react-chartjs-2';
 
 
 const data = {
   labels: ['2012', '2013', '2014', '2015', '2016', '2017', '2018'],
   datasets: [
     {
-      label: 'จำนวนบุตรที่เข้ามาในโครงการ',
+      label: 'เด็กที่ได้รับการศึกษาแล้ว',
       fill: false,
       lineTension: 0.1,
       backgroundColor: 'rgba(75,192,192,0.4)',
@@ -24,31 +24,32 @@ const data = {
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [3, 5, 15, 35, 15, 10, 30]
+      data: [30,50,40,25,36,31,26,42,15,46,43,46]
     },
     {
-      label: 'จำนวนแรงงานใหม่',
+      label: 'เด็กที่ยังไม่ได้รับการศึกษา',
       fill: false,
       lineTension: 0.1,
-      backgroundColor: 'rgba(175,92,92,0.4)',
-      borderColor: 'rgba(175,92,92,1)',
+      backgroundColor: 'rgba(92,92,92,0.4)',
+      borderColor: 'rgba(92,92,92,1)',
       borderCapStyle: 'butt',
       borderDash: [],
       borderDashOffset: 0.0,
       borderJoinStyle: 'miter',
-      pointBorderColor: 'rgba(175,92,92,1)',
+      pointBorderColor: 'rgba(92,92,92,1)',
       pointBackgroundColor: '#fff',
       pointBorderWidth: 1,
       pointHoverRadius: 5,
-      pointHoverBackgroundColor: 'rgba(175,92,92,1)',
+      pointHoverBackgroundColor: 'rgba(92,92,92,1)',
       pointHoverBorderColor: 'rgba(220,220,220,1)',
       pointHoverBorderWidth: 2,
       pointRadius: 1,
       pointHitRadius: 10,
-      data: [10, 41, 37, 51, 73, 21, 42]
+      data: [10,5,20,31,12,13,31,20,6,3,14,30]
     }
   ]
 };
+
 
 const options = {
   scales: {
@@ -62,15 +63,13 @@ const options = {
   },
 }
 
-
-
-class FollowerPerYear extends React.Component {
+class EducationTimeline extends React.Component {
   render () {
     return (
-        <Line data={data} options={options}/>
+      <Bar data={data} options={options}/>
     )
   }
 }
 
 
-export default FollowerPerYear
+export default EducationTimeline
