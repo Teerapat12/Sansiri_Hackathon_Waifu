@@ -3,6 +3,8 @@ import styled from 'styled-components'
 const CircleButton = styled.div`
 	cursor: pointer;
 	width: 350px;
+	min-width: 220px;
+	min-height: 220px;
 	height: 350px;
 	display: flex;
 	justify-content: center;
@@ -28,6 +30,14 @@ const CircleButton = styled.div`
 	& > svg {
 		width: 40px;
 		height: 40px;
+	}
+	
+	@media only screen and (max-width: 800px){
+		border-radius: 0;
+		left: 0;
+		right:0;
+		bottom: 0;
+		top: 0;
 	}
 `
 

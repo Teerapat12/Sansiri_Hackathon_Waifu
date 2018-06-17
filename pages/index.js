@@ -19,17 +19,18 @@ class Index extends React.Component {
 		return (
 			<Layout>
 				<div style={{
-					position: 'absolute',
+					position: 'relative',
 					top: 0,
 					left: 0,
 					right: 0,
 					bottom: 0,
 					backgroundImage: 'url("/static/images/homeBG.jpg")',
 					backgroundRepeat: 'no-repeat',
+					backgroundAttachment: 'fixed',
 					backgroundPosition: 'center bottom',
-					backgroundSize: 'contain'
+					backgroundSize: 'cover'
 				}}>
-					<FlexBox style={{width: '100%', height: '100vh', justifyContent: "space-evenly"}}>
+					<FlexBox style={{width: '100%', height: '100vh', justifyContent: "space-evenly", flexWrap: 'wrap'}}>
 						<FlexBox>
 							<CircleButton onClick={() => Router.push('/dashboard')}>
 								<Favorite />
