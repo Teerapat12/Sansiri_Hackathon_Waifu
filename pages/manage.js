@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -57,3 +58,24 @@ LabelBottomNavigation.propTypes = {
 };
 
 export default withStyles(styles)(LabelBottomNavigation);
+=======
+import React from 'react'
+import Layout from '../components/Layout'
+import ChildrenTab from '../components/ChildrenTab'
+
+
+class Management extends React.Component {
+
+	render () {
+		return (
+			<>
+				<Layout>
+					<ChildrenTab />
+				</Layout>
+			</>
+		)
+	}
+}
+
+export default (Management);
+>>>>>>> ad587033c75034a9dba1a557b6d0541a0f5f475a

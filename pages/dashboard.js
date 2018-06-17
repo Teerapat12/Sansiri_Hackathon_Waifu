@@ -16,7 +16,7 @@ class Vaccine extends React.Component{
   render() {
     return(
       <Layout>
-        <div style={{padding:'30px'}}>
+        <div style={{padding:'30px', maxWidth: 1000, margin: 'auto'}}>
           <div style={{marginTop:"30px"}}>
             อัตราส่วนชนชาติของแรงงาน
             <WorkerNationality />
