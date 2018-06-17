@@ -8,6 +8,8 @@ import getPageContext from '../src/getPageContext';
 export default class MyDocument extends Document {
 	static getInitialProps ({ renderPage }) {
 		const pageContext = getPageContext();
+		const sheet = new ServerStyleSheet()
+		const styleTags = sheet.getStyleElement()
 		const page = renderPage(Component => props => (
 			<JssProvider
 				registry={pageContext.sheetsRegistry}
@@ -18,6 +20,7 @@ export default class MyDocument extends Document {
 		))
 		return {
 			...page,
+			styleTags,
 			pageContext,
 			styles: (
 				<React.Fragment>
@@ -38,12 +41,12 @@ export default class MyDocument extends Document {
 			<html>
 			<Head>
 				<title>Good Space by Sansiri</title>
+				<link rel="stylesheet" href="https://unpkg.com/react-select@1.2.1/dist/react-select.css" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				{this.props.styleTags}
 				<style dangerouslySetInnerHTML={{ __html: app_style }} />
 				<meta name="theme-color" content={pageContext.theme.palette.primary.main} />
 				<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
-				<link rel="stylesheet" href="https://unpkg.com/react-select@1.2.1/dist/react-select.css" />
 			</Head>
 			<body>
 			<Main />
