@@ -43,9 +43,18 @@ var followerSchema = mongoose.Schema({
     level:String,
     year:String,
     name:String,
-    inCountry: Boolean,
-    isNormal: Boolean,
-    inGoodSpace: Boolean
+    inCountry: {
+      type:Boolean,
+      fake:'random.boolean'
+    },
+    isNormal: {
+      type:Boolean,
+      fake:'random.boolean'
+    },
+    inGoodSpace: {
+      type:Boolean,
+      fake:'random.boolean'
+    }
   }
 });
 
