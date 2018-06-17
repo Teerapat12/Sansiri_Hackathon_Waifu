@@ -92,6 +92,7 @@ class SearchBox extends React.Component {
 	}
 
 	getSuggestions (value) {
+		console.log("GetSuggestions")
 		let {datas} = this.props
 		datas = datas.reduce((obj, cur) => {
 			obj.push({label: cur.fname, ...cur})
@@ -142,7 +143,7 @@ class SearchBox extends React.Component {
 
 
 	render () {
-		const { classes, onFound, onNotFound } = this.props;
+		const { classes, onFound, onNotFound, placeholder="Search" } = this.props;
 
 		return (
 			<Autosuggest
@@ -157,11 +158,11 @@ class SearchBox extends React.Component {
 				onSuggestionsFetchRequested={this.handleSuggestionsFetchRequested(onFound)}
 				onSuggestionsClearRequested={this.handleSuggestionsClearRequested(onNotFound)}
 				renderSuggestionsContainer={renderSuggestionsContainer}
-				getSuggestionValue={this.getSuggestions}
+				getSuggestionValue={this.getSuggestionValue}
 				renderSuggestion={renderSuggestion}
 				inputProps={{
 					classes,
-					placeholder: 'Search a country (start with a)',
+					placeholder: placeholder,
 					value: this.state.value,
 					onChange: this.handleChange
 				}}

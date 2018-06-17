@@ -6,10 +6,10 @@ import {
 	CenterLogo,
 	Menu,
 	MenuContainer, MenuGroup,
-	MenuItem,
-	MenuLink,
-	MenuLogo
+	MenuItem
 } from './Nav'
+import Button from '@material-ui/core/Button'
+import HomeIcon from '@material-ui/icons/ArrowBack'
 import { Container, Image } from 'semantic-ui-react'
 import styled from 'styled-components'
 
@@ -45,6 +45,15 @@ class Navbar extends React.Component {
 			<>
 				<Menu>
 					<MenuContainer>
+						{process.browser? Router.pathname !== '/' ? (
+							<MenuGroup>
+								<MenuItem>
+									<Button onClick={() => Router.push('/')} style={{zIndex: 2000}}>
+										<HomeIcon />
+									</Button>
+								</MenuItem>
+							</MenuGroup>
+						) : null: null}
 						<MenuGroup>
 							<MenuItem>
 								<CenterLogo>

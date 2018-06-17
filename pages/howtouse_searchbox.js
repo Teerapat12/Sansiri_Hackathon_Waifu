@@ -17,6 +17,7 @@ class Howtouse_searchbox extends React.Component {
 				<SearchBox datas={this.state.datas}
 						   onFound={(value) => this.setState({ founds: value })}
 						   onNotFound={(value) => this.setState({ founds: value})}
+						   placeholder="ค้นหาแรงงาน"
 				/>
 			</>
 		)
