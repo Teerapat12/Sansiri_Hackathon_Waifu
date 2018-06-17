@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios';
 
 import { ListGroup, Panel, ListGroupItem } from 'react-bootstrap';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
 class Worker extends React.Component{
 
   constructor(props){
@@ -20,15 +20,7 @@ class Worker extends React.Component{
   render() {
     return(
       <div style={{padding:'15px'}}>
-
-        <Panel>
-          <Panel.Heading>Panel heading</Panel.Heading>
-          <Panel.Body>Some default panel content here.</Panel.Body>
-          <ListGroup>
-            {this.state.workers.map((worker)=><ListGroupItem>{worker.fname}</ListGroupItem>)}
-          </ListGroup>
-        </Panel>;
-
+            {this.state.workers.map((worker)=><div>{worker.fname}</div>)}
       </div>
     )
   }
