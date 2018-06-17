@@ -19,7 +19,6 @@ class Index extends React.Component {
 
 	render () {
 		return (
-<<<<<<< HEAD
 			<Layout>
 				<div style={{
 					position: 'relative',
@@ -49,37 +48,6 @@ class Index extends React.Component {
 					</FlexBox>
 				</div>
 			</Layout>
-=======
-			// <Layout>
-			// 	<div style={{
-			// 		position: 'absolute',
-			// 		top: 0,
-			// 		left: 0,
-			// 		right: 0,
-			// 		bottom: 0,
-			// 		backgroundImage: 'url("/static/images/homeBG.jpg")',
-			// 		backgroundRepeat: 'no-repeat',
-			// 		backgroundPosition: 'center bottom',
-			// 		backgroundSize: 'contain'
-			// 	}}>
-			// 		<FlexBox style={{width: '100%', height: '100vh', justifyContent: "space-evenly"}}>
-			// 			<FlexBox>
-			// 				<CircleButton onClick={() => Router.push('/dashboard')}>
-			// 					<Favorite />
-			// 					ภาพรวม
-			// 				</CircleButton>
-			// 			</FlexBox>
-			// 			<FlexBox>
-			// 				<CircleButton onClick={() => Router.push('/manage')}>
-			// 					<Face />
-			// 					จัดการ
-			// 				</CircleButton>
-			// 			</FlexBox>
-			// 		</FlexBox>
-			// 	</div>
-			// </Layout>
-			<Test/>
->>>>>>> nut
 		)
 	}
 }

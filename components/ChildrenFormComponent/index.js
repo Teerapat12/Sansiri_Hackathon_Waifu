@@ -2,7 +2,7 @@ import React from 'react'
 import Input from '@material-ui/core/Input'
 import Grid from '@material-ui/core/Grid'
 
-class ChildrenFormCompnent extends React.Component {
+class ChildrenFormComponent extends React.Component {
 	render () {
 		return (
 			<div style={{flexGrow: 1, padding: 30}}>
@@ -19,4 +19,4 @@ class ChildrenFormCompnent extends React.Component {
 	}
 }
 
-export default ChildrenFormCompnent
+export default ChildrenFormComponent
