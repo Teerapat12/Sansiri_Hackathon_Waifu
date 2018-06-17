@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -31,24 +30,28 @@ class LabelBottomNavigation extends React.Component {
 		const { value } = this.state;
 
 		return (
-			<div>
-				<div style={{ position: 'sticky', width: '100%', top: 0, overflowX: 'hidden' }} >
-					<Layout />
-				</div>
+			process.browser ? (
+
 				<div>
-					<DataFrom />
-				</div>
-				<div style={{ position: 'sticky', width: '100%', bottom: 0, overflowX: 'hidden' }}>
-					<BottomNavigation value={value} onChange={this.handleChange} >
-						<BottomNavigationAction label="ข้อมูลเด็ก" value="recents" icon={<ChildCareIcon />} />
-						<BottomNavigationAction label="ประวัติรับวัคซีน" value="favorites" icon={<ColorizeIcon />} />
-						<BottomNavigationAction label="ประวัติการศึกษา" value="nearby" icon={<BookIcon />} />
-						<BottomNavigationAction label="ข้อมูลผู้ปกครอง" value="folder" icon={<WcIcon />} />
-					</BottomNavigation>
-				</div>
+					<div style={{ position: 'sticky', width: '100%', top: 0, overflowX: 'hidden', zIndex: 100 }} >
+						<Layout />
+					</div>
+					<div style={{ zIndex: '0', position: 'relative' }}>
+						<DataFrom />
+					</div>
+					<div style={{ position: 'sticky', width: '100%', bottom: 0, overflowX: 'hidden' }}>
+						<BottomNavigation value={value} onChange={this.handleChange} >
+							<BottomNavigationAction label="ข้อมูลเด็ก" value="recents" icon={<ChildCareIcon />} />
+							<BottomNavigationAction label="ประวัติรับวัคซีน" value="favorites" icon={<ColorizeIcon />} />
+							<BottomNavigationAction label="ประวัติการศึกษา" value="nearby" icon={<BookIcon />} />
+							<BottomNavigationAction label="ข้อมูลผู้ปกครอง" value="folder" icon={<WcIcon />} />
+						</BottomNavigation>
+					</div>
 
 
-			</div>
+				</div>
+			) : null
+
 		);
 	}
 }
@@ -58,24 +61,3 @@ LabelBottomNavigation.propTypes = {
 };
 
 export default withStyles(styles)(LabelBottomNavigation);
-=======
-import React from 'react'
-import Layout from '../components/Layout'
-import ChildrenTab from '../components/ChildrenTab'
-
-
-class Management extends React.Component {
-
-	render () {
-		return (
-			<>
-				<Layout>
-					<ChildrenTab />
-				</Layout>
-			</>
-		)
-	}
-}
-
-export default (Management);
->>>>>>> ad587033c75034a9dba1a557b6d0541a0f5f475a
