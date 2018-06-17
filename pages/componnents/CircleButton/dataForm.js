@@ -17,6 +17,8 @@ import classNames from 'classnames';
 import Button from '@material-ui/core/Button';
 import Apis from '../../pages/getApi/request'
 
+import { withAlert } from 'react-alert'
+
 const styles = theme => ({
     root: {
         width: '100%',
@@ -125,7 +127,7 @@ class DataForm extends React.Component {
         return (
             <div>
                 {data_followers.map((data, number) => (
-                    <div className={classes.root}>
+                    <div className={classes.root} >
                         <ExpansionPanel>
                             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
                                 <Typography className={classes.heading}>บุตรคนที่ {number + 1}</Typography>
@@ -133,7 +135,7 @@ class DataForm extends React.Component {
                             <ExpansionPanelDetails>
                                 <Typography style={{ width: '100%' }}>
                                     <div>
-                                        <FormControl className={classes.formControl} style={{ display: 'flex' }}>
+                                        <FormControl onSubmit={(req)=>{alert("HEY")}} className={classes.formControl} style={{ display: 'flex' }}>
                                             <InputLabel htmlFor="controlled-open-select-sex">เพศ</InputLabel>
                                             <Select
                                                 onClose={this.handleCloseSexForm}
@@ -144,7 +146,6 @@ class DataForm extends React.Component {
                                                     name: 'sex',
                                                     id: 'controlled-open-select-sex',
                                                 }}
-
                                             >
                                                 <MenuItem value={true}>ชาย</MenuItem>
                                                 <MenuItem value={false}>หญิง</MenuItem>
@@ -158,7 +159,7 @@ class DataForm extends React.Component {
                                                 ชื่อ</InputLabel>
                                             <Input
 
-                                                id="custom-css-input" value={data.fname}
+                                                id="custom-css-input" ref={data.fname}
                                             />
                                         </FormControl>
                                         <FormControl className={classes.margin} style={{ display: 'flex' }}>
@@ -169,7 +170,7 @@ class DataForm extends React.Component {
                                                 นามสกุล</InputLabel>
                                             <Input
 
-                                                id="custom-css-input" value={data.lname}
+                                                id="custom-css-input" ref={data.lname}
                                             />
                                         </FormControl>
                                         <ExpansionPanel style={{ marginTop: '30px' }}>
@@ -288,8 +289,10 @@ class DataForm extends React.Component {
                                         <div style={{ float: 'right' }}>
                                             <Button variant="contained" size="small" className={classes.button} style={{
                                                 background: 'linear-gradient(to right, rgb(212,242,205) 0%,#f2b9ae 100%)'
-                                            }}>
-                                                <Save className={classNames(classes.leftIcon, classes.iconSmall)} />
+                                            }}
+                                            >
+                                                <Save className={classNames(classes.leftIcon, classes.iconSmall)}
+                                                />
                                                 Save</Button>
                                         </div>
                                     </div>
@@ -298,6 +301,8 @@ class DataForm extends React.Component {
                         </ExpansionPanel>
                     </div>
                 ))}
+
+
             </div>
         );
     }

@@ -1,6 +1,9 @@
 import React from 'react'
 import { FlipCard } from 'react-flop-card';
 
+import Refresh from '@material-ui/icons/Refresh';
+import classNames from 'classnames';
+
 class EduFlipCard extends React.Component{
 
   constructor() {
@@ -34,7 +37,8 @@ const cardDiv = (name,studentNum,img, onFlip) => <div>
     <div style={{position:"relative"}}>
       <div style={{...imageStyle,display:"flex", alignItems:"center",justifyContent:"center", backgroundImage:"url('"+img+"')"}}><p style={middleNumberStyle}>{studentNum} คน</p></div>
 
-      <button style={rotateBtnStyle} onClick={()=>onFlip()}>O</button>
+      <button style={rotateBtnStyle} onClick={()=>onFlip()}>
+        <Refresh/></button>
     </div>
   </div>
 </div>
