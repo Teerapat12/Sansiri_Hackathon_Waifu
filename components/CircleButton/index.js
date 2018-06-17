@@ -11,7 +11,7 @@ const CircleButton = styled.div`
 	box-shadow: 0 0 10px 3px rgba(0,0,0, .2);
 	background: linear-gradient(to right, rgb(212,242,205) 0%,#f2b9ae 100%);
 	border-radius: 10%;
-	font-size: 2em !important;
+	font-size: 2em;
 	color: #535353;
 	padding: 50px;
 	box-sizing: border-box;
@@ -23,6 +23,11 @@ const CircleButton = styled.div`
 	&:active {
 		padding: 80px;
 		transform: rotateZ(3deg);
+	}
+	
+	& > svg {
+		width: 40px;
+		height: 40px;
 	}
 `
 
