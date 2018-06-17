@@ -40,7 +40,9 @@ class LabelBottomNavigation extends React.Component {
 						<DataFrom />
 					</div>
 					<div style={{ position: 'sticky', width: '100%', bottom: 0, overflowX: 'hidden' }}>
-						<BottomNavigation value={value} onChange={this.handleChange} >
+						<BottomNavigation value={value} onChange={this.handleChange} style={{
+							position: 'fixed', bottom: '0px', zIndex: '0', width: '100%'
+						}} >
 							<BottomNavigationAction label="ข้อมูลเด็ก" value="recents" icon={<ChildCareIcon />} />
 							<BottomNavigationAction label="ประวัติรับวัคซีน" value="favorites" icon={<ColorizeIcon />} />
 							<BottomNavigationAction label="ประวัติการศึกษา" value="nearby" icon={<BookIcon />} />
