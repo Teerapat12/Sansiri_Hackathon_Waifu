@@ -2,8 +2,8 @@ var mongoose = require('mongoose');
 
 
 var workerSchema = mongoose.Schema({
-  firstname: String,
-  lastname : String,
+  fname: String,
+  lname : String,
   number: String,
   nationality: String,
   workerType: String,

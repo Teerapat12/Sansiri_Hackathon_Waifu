@@ -50,6 +50,11 @@ router.post('/', (req,res) => {
 })
 
 
+router.delete('/:id', (req,res)=> {
+  const {id} = req.body;
+  Worker.findOneAndDelete({_id:id});
+})
+
 
 
 module.exports = router;
