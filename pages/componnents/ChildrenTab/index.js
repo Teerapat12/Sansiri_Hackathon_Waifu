@@ -12,8 +12,6 @@ import Paper from '@material-ui/core/Paper'
 import ChildrenFormComponent from '../ChildrenFormComponent'
 import Typography from '@material-ui/core/Typography';
 
-import DataForm from '../CircleButton/dataForm'
-
 const styles = theme => ({
 	root: {
 		backgroundColor: theme.palette.background.paper,
@@ -29,9 +27,27 @@ function TabContainer({ children, dir }) {
 	);
 }
 
+const styles = {
+  slide: {
+    padding: 15,
+    minHeight: 100,
+    color: '#fff',
+  },
+  slide1: {
+    background: '#FEA900',
+  },
+  slide2: {
+    background: '#B3DC4A',
+  },
+  slide3: {
+    background: '#6AC0FF',
+  },
+};
+
+
 class LabelBottomNavigation extends React.Component {
     state = {
-		tabIndex: 0
+		tabIndex: '0'
     };
 
 	onTabChange = (e, value) => {
@@ -54,18 +70,19 @@ class LabelBottomNavigation extends React.Component {
                 {
                     process.browser? (
 						<Paper>
-							<SwipeableViews
-								axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-								index={Number(tabIndex)}
-								onChangeIndex={this.handleChangeIndex}
-							>
-								<TabContainer ><DataForm/></TabContainer>
-								<TabContainer >Item 2</TabContainer>
-								<TabContainer >Item 3</TabContainer>
-								<TabContainer >Item 4</TabContainer>
+							<SwipeableViews>
+								<div style={Object.assign({}, styles.slide, styles.slide1)}>
+									slide n°1
+								</div>
+								<div style={Object.assign({}, styles.slide, styles.slide2)}>
+									slide n°2
+								</div>
+								<div style={Object.assign({}, styles.slide, styles.slide3)}>
+									slide n°3
+								</div>
 							</SwipeableViews>
 							<Tabs
-								value={Number(tabIndex)}
+								value={tabIndex}
 								indicatorColor="primary"
 								textColor="primary"
 								centered

@@ -25,7 +25,7 @@ router.post('/', (req,res) => {
   const {project} = req.body;
   Project.create(project, (err,project) => {
     if(err) return res.status(500).send(err)
-    return res.status(200).send(project)
+    return res.status(200).send(pxeroject)
   })
 })
 

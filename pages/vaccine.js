@@ -9,12 +9,10 @@ import VaccineTimeLine from '../components/Stats/vaccineTimeline';
 class Vaccine extends React.Component{
   render() {
     return(
-			<Layout>
-        <div style={{padding:'15px'}}>
+        <div style={{padding:'15px',marginBottom:'70px'}}>
           <VaccineSummary />
           <VaccineTimeLine />
         </div>
-			</Layout>
     )
   }
 }

@@ -10,6 +10,10 @@ import WcIcon from '@material-ui/icons/Wc';
 import Layout from '.././components/Layout';
 import DataFrom from '.././components//CircleButton/dataForm'
 
+import Vaccine from '.././pages/vaccine';
+import Education from '.././pages/education';
+import Worker from '.././pages/worker';
+
 const styles = {
 	root: {
 		width: 500,
@@ -18,7 +22,7 @@ const styles = {
 
 class LabelBottomNavigation extends React.Component {
 	state = {
-		value: 'recents',
+		value: '0',
 	};
 
 	handleChange = (event, value) => {
@@ -36,17 +40,20 @@ class LabelBottomNavigation extends React.Component {
 					<div style={{ position: 'sticky', width: '100%', top: 0, overflowX: 'hidden', zIndex: 100 }} >
 						<Layout />
 					</div>
-					<div style={{ zIndex: '0', position: 'relative' }}>
-						<DataFrom />
+					<div style={{ zIndex: '0', position: 'relative'}}>
+						{value==='0'?<DataFrom />:null}
+						{value==='1'?<Vaccine />: null}
+						{value==='2'?<Education />: null}
+						{value==='3'?<Worker />: null}
 					</div>
 					<div style={{ position: 'sticky', width: '100%', bottom: 0, overflowX: 'hidden' }}>
 						<BottomNavigation value={value} onChange={this.handleChange} style={{
 							position: 'fixed', bottom: '0px', zIndex: '0', width: '100%'
 						}} >
-							<BottomNavigationAction label="ข้อมูลเด็ก" value="recents" icon={<ChildCareIcon />} />
-							<BottomNavigationAction label="ประวัติรับวัคซีน" value="favorites" icon={<ColorizeIcon />} />
-							<BottomNavigationAction label="ประวัติการศึกษา" value="nearby" icon={<BookIcon />} />
-							<BottomNavigationAction label="ข้อมูลผู้ปกครอง" value="folder" icon={<WcIcon />} />
+							<BottomNavigationAction label="ข้อมูลเด็ก" value="0" icon={<ChildCareIcon />} />
+							<BottomNavigationAction label="ประวัติรับวัคซีน" value="1" icon={<ColorizeIcon />} />
+							<BottomNavigationAction label="ประวัติการศึกษา" value="2" icon={<BookIcon />} />
+							<BottomNavigationAction label="ข้อมูลผู้ปกครอง" value="3" icon={<WcIcon />} />
 						</BottomNavigation>
 					</div>
 

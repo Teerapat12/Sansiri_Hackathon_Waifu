@@ -17,17 +17,17 @@ class Vaccine extends React.Component{
     return(
       <Layout>
         <div style={{padding:'30px', maxWidth: 1000, margin: 'auto'}}>
-          <div style={{marginTop:"30px"}}>
+          <div style={{marginTop:"50px",marginBottom:"70px"}}>
             อัตราส่วนชนชาติของแรงงาน
             <WorkerNationality />
           </div>
 
-          <div style={{marginTop:"30px"}}>
+          <div style={{marginTop:"50px",marginBottom:"70px"}}>
             บุตรที่ติดตามมาต่อปี
             <FollowerPerYear />
           </div>
 
-          <div style={{marginTop:"30px"}}>
+          <div style={{marginTop:"50px",marginBottom:"70px"}}>
             ข้อมูลการฉีดวัคซีน
             <VaccineSummary />
             <VaccineTimeLine />
