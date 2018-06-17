@@ -40,7 +40,7 @@ var followerSchema = mongoose.Schema({
   },
   followingWorker: {type: mongoose.Schema.Types.ObjectId, ref: 'Worker'},
   school:{
-    level:String,
+    level:{type:String, default:"อ-ต้น"},
     year:String,
     name:String,
     inCountry: {

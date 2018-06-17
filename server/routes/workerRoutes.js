@@ -51,8 +51,13 @@ router.post('/', (req,res) => {
 
 
 router.delete('/:id', (req,res)=> {
-  const {id} = req.body;
-  Worker.findOneAndDelete({_id:id});
+  const {id} = req.params;
+  Worker.findOneAndDelete({_id:id}, (err,oldWorker)=>{
+    if(err) console.log(err);
+    else if(!oldWorker) console.log("not found");
+    return res.send("okay");
+
+  });
 })
 
 
